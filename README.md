@@ -1,9 +1,7 @@
 # NescaTelegramBot
 #### NescaTelegramBot - скрипт для автоматического постинга результатов Nesca в Telegram канал.
 
-![1](https://user-images.githubusercontent.com/35846376/35504570-9c039c68-050d-11e8-908f-f62e68d981d7.png)
-
-![1](https://user-images.githubusercontent.com/35846376/35504570-9c039c68-050d-11e8-908f-f62e68d981d7.png)
+![1](https://user-images.githubusercontent.com/35846376/35512518-357bc700-052a-11e8-86df-e4728e389cb8.jpg)
 
 # Установка
 
