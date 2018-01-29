@@ -15,7 +15,7 @@ NescaTelegramBot - скрипт для автоматического пости
 
 Правим файл NescaTelegramBot.py
 
-1. Скачиваем драйвер: https://github.com/mozilla/geckodriver/releases
+1. Скачиваем драйвер: github.com/mozilla/geckodriver/releases
 2. Меняем путь к драйверу: DRIVER = 'D:\Python' 
 3. Меняем BOTTOKEN на свой (который получили у BotFather): bot = telegram.Bot('BOTTOKEN')
 4. Меняем канал на свой: channel = '@CHANNELNAME
