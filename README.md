@@ -1,5 +1,7 @@
 # NescaTelegramBot
-#### NescaTelegramBot - скрипт для автоматического постинга результатов Nesca в Telegram канал. 
+#### NescaTelegramBot - скрипт для автоматического постинга результатов Nesca в Telegram канал.
+
+![1](https://user-images.githubusercontent.com/35846376/35504570-9c039c68-050d-11e8-908f-f62e68d981d7.png)
 
 # Установка
 
@@ -15,19 +17,19 @@
 
 #### Правим файл NescaTelegramBot.py
 
-1. Скачиваем драйвер: 
+1. Скачиваем драйвер:
 ```
 github.com/mozilla/geckodriver/releases
 ```
-2. Меняем путь к драйверу:
+2. Добавляем папку с драйвером в PATH (в win желательно вынести запись в первые ряды):
 ```
-DRIVER = 'D:\Python'
+'D:\Python\Driver\Geckodriver'
 ```
 3. Меняем BOTTOKEN на свой (который получили у BotFather):
 ```
 bot = telegram.Bot('BOTTOKEN')
 ```
-4. Меняем канал на свой: 
+4. Меняем канал на свой:
 ```
 channel = '@CHANNELNAME
 ```
@@ -38,5 +40,3 @@ channel = '@CHANNELNAME
 1. Запускаем файл NescaTelegramBot.py
 2. Вводим расположение файла с результатами нески (на пример: D:\Results\other.html)
 3. Для удобства можно кинуть скрипт прямо в папку с результатами и ввести просто: "other.html"
-
-

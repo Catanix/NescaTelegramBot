@@ -1,6 +1,7 @@
 from selenium import webdriver
 from bs4 import BeautifulSoup
 import telegram #python-telegram-bot
+import datetime
 import requests
 import codecs
 import time
@@ -21,8 +22,7 @@ def parse(path):
 def screenshot(ip):
     try:
         # Download driver here: https://github.com/mozilla/geckodriver/releases
-        DRIVER = 'D:\Python' # Path to driver
-        driver = webdriver.Firefox(DRIVER)
+        driver = webdriver.Firefox()
         driver.get('http://'+ip)
         screenshot = driver.save_screenshot('web.png')
         driver.quit()
@@ -31,7 +31,7 @@ def screenshot(ip):
 
 def Start():
     bot = telegram.Bot('BOTTOKEN') # Bot token (@BotFather)
-    channel = '@CHANNELNAME' # Telegram channel name (@ExampleChannel)
+    channel = '@CHANNEL' # Telegram channel name (@ExampleChannel)
     ip_list = []
     print('Nesca output files path:')
     path = input()
@@ -40,10 +40,12 @@ def Start():
             adress=parse(path)
             for ip in adress:
                  if ip not in ip_list:
+                     now = str(datetime.date.today())
                      ip_list.append(ip)
                      screenshot(ip)
-                     bot.send_photo(chat_id=channel, photo=open('web.png', 'rb'))
-                     bot.send_message(chat_id=channel, text="ip: "+ ip)
+                     print(now)
+                     bot.send_message(chat_id=channel, text="Date: "+now+"\nIp: http://"+ip)
+                     bot.send_photo(chat_id=channel, caption="http://"+ip, photo=open('web.png', 'rb'))
                      print('Post created: '+'http://'+ip)
                      os.remove(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'web.png'))
             time.sleep(10)
