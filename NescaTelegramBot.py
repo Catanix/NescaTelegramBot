@@ -21,7 +21,7 @@ def parse(path):
 def screenshot(ip):
     try:
         # Download driver here: https://github.com/mozilla/geckodriver/releases
-        DRIVER = 'D:\driver' # Path to driver
+        DRIVER = 'D:\Python' # Path to driver
         driver = webdriver.Firefox(DRIVER)
         driver.get('http://'+ip)
         screenshot = driver.save_screenshot('web.png')
@@ -38,17 +38,14 @@ def Start():
     while True:
         try:
             adress=parse(path)
-            new_added = False
             for ip in adress:
                  if ip not in ip_list:
                      ip_list.append(ip)
-                     new_added=True
-                     if new_added:
-                         screenshot(ip)
-                         bot.send_photo(chat_id=channel, photo=open('web.png', 'rb'))
-                         bot.send_message(chat_id=channel, text="ip: "+ ip)
-                         print('Post created: '+'http://'+ip)
-                         os.remove(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'web.png'))
+                     screenshot(ip)
+                     bot.send_photo(chat_id=channel, photo=open('web.png', 'rb'))
+                     bot.send_message(chat_id=channel, text="ip: "+ ip)
+                     print('Post created: '+'http://'+ip)
+                     os.remove(os.path.join(os.path.abspath(os.path.dirname(__file__)), 'web.png'))
             time.sleep(10)
         except:
             pass
