@@ -15,7 +15,10 @@
 
 #### Правим файл NescaTelegramBot.py
 
-1. Скачиваем драйвер: github.com/mozilla/geckodriver/releases
+1. Скачиваем драйвер: 
+```
+github.com/mozilla/geckodriver/releases
+```
 2. Меняем путь к драйверу:
 ```
 DRIVER = 'D:\Python'
