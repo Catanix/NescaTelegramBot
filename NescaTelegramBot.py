@@ -27,7 +27,7 @@ def screenshot(ip):
         screenshot = driver.save_screenshot('web.png')
         driver.quit()
     except:
-        pass
+        driver.quit()
 
 def Start():
     bot = telegram.Bot('BOTTOKEN') # Bot token (@BotFather)
