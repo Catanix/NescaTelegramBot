@@ -43,7 +43,6 @@ def Start():
                      now = str(datetime.date.today())
                      ip_list.append(ip)
                      screenshot(ip)
-                     print(now)
                      bot.send_message(chat_id=channel, text="Date: "+now+"\nIp: http://"+ip)
                      bot.send_photo(chat_id=channel, caption="http://"+ip, photo=open('web.png', 'rb'))
                      print('Post created: '+'http://'+ip)
@@ -53,5 +52,4 @@ def Start():
             pass
 
 Start()
-
 #WEBSEEKERMOODUCK
